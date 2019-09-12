@@ -13,8 +13,13 @@ nunjucks.configure({
 });
 
 app.get('/', function (request, response) {
-	response.send('a');
+	response.render('templates/homePage/index.njk');
 });
+
+app.get('/catalog', function (request, response) {
+	response.render('templates/catalogPage/index.njk');
+});
+
 
 app.listen(port, function () {
 	console.log ('we are on ' + port);
